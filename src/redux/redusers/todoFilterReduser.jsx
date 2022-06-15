@@ -16,10 +16,10 @@ const initialState = {
 };
 
 export const todoFilterReduser = (state = initialState, action) => {
-  // switch (action.type) {
-  //   case :
-  //     return state ;
-  //   default:
-  //     return state;
-  // }
+  switch (action.type) {
+    case 'INCREMENT':
+      return state;
+    default:
+      return state;
+  }
 };

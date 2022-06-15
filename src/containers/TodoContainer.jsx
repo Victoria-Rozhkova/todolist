@@ -1,8 +1,7 @@
-import React from "react";
 import { connect } from "react-redux";
 import { Todo } from "../components/Todo/Todo";
 import { updateTextActionCreator } from "../redux/redusers/todoInputReduser";
-import { addTaskActionCreator, deleteCompletedTasksActionCreator, setIsCompletedActionCreator } from "../redux/redusers/todoReduser";
+import { addTaskActionCreator, completedTaskActionCreator, deleteCompletedTasksActionCreator } from "../redux/redusers/todoReduser";
 
 const MapStateToProps = (state) => {
   return {
@@ -18,6 +17,7 @@ const MapDispatchToProps = (dispatch) => {
     updateText: (text) => { dispatch(updateTextActionCreator(text)); },
     addTask: (id, text, isCompleted) => { dispatch(addTaskActionCreator(id, text, isCompleted)); },
     deleteCompletedTasks: (activeTasks) => { dispatch(deleteCompletedTasksActionCreator(activeTasks)); },
+    completedTask: (id) => { debugger; dispatch(completedTaskActionCreator(id)); debugger; }
   };
 };
 

@@ -9,7 +9,7 @@ export const Todo = (props) => {
   return (
     <div className="todo-wrapper">
       <TodoInput addTask={props.addTask} taskText={props.taskText} updateText={props.updateText} />
-      {isTasksExist && <TodoList todos={props.todos} />}
+      {isTasksExist && <TodoList completedTask={props.completedTask} todos={props.todos} />}
       {isTasksExist && <TodoFilter deleteCompletedTasks={props.deleteCompletedTasks} todos={props.todos} filter={props.filter} count={props.todos.length} activeFilter={props.activeFilter} />}
     </div>
   );
