@@ -1,0 +1,12 @@
+.todoItem {
+  list-style-type: none;
+}
+
+.completed {
+  color: gray;
+  text-decoration: line-through;
+}
+
+.todoText {
+  cursor: pointer;
+}
