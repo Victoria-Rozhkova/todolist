@@ -24,15 +24,17 @@ const initialState = {
 export const todoReduser = (state = initialState, action) => {
   switch (action.type) {
     case ADD_TASK:
-      const newTask = {
-        id: action.id,
-        text: action.text,
-        isCompleted: action.isCompleted,
-      };
-      let stateCopy = { ...state };
-      stateCopy.todos = [...state.todos];
-      stateCopy.todos.push(newTask);
-      return stateCopy;
+      if (action.text) {
+        const newTask = {
+          id: action.id,
+          text: action.text,
+          isCompleted: action.isCompleted,
+        };
+        let stateCopy = { ...state };
+        stateCopy.todos = [...state.todos];
+        stateCopy.todos.push(newTask);
+        return stateCopy;
+      } return state;
     case DELETE_COMPLETED_TASKS:
       return {
         ...state,

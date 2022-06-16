@@ -1,18 +1,20 @@
 import React from "react";
 import style from "./TodoInput.module.css";
 import '../../../App.css';
+import { useState } from "react";
 
-export const TodoInput = ({ taskText, updateText, addTask }) => {
+export const TodoInput = ({ addTask }) => {
+  const [textInput, setTextInput] = useState('');
 
   const onChangeText = (e) => {
     const text = e.target.value;
-    updateText(text);
+    setTextInput(text);
   };
   const addTaskHandler = ({ key }) => {
     if (key === 'Enter') {
       const id = new Date().getTime();
-      addTask(id, taskText, false);
-      updateText("");
+      addTask(id, textInput, false);
+      setTextInput("");
     }
   };
 
@@ -24,7 +26,7 @@ export const TodoInput = ({ taskText, updateText, addTask }) => {
         className="todo-input"
         placeholder="What needs to be done?"
         onChange={onChangeText}
-        value={taskText}
+        value={textInput}
         onKeyPress={addTaskHandler}
       />
     </div>);
