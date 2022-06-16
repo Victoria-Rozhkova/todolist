@@ -20,7 +20,7 @@ export const Todo = (props) => {
 
 
   return (
-    <div className="todo-wrapper">
+    <div className={style.todoWrapper}>
       <TodoInput addTask={props.addTask} />
       {isTasksExist && <TodoList completedTask={props.completedTask} todos={filteredTasks} />}
       {isTasksExist && <TodoFilter changeFilter={props.changeFilter} deleteCompletedTasks={props.deleteCompletedTasks} todos={props.todos} filter={props.filter} count={getActiveTasks(props.todos)} activeFilter={props.activeFilter} />}

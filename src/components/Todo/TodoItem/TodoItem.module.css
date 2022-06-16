@@ -1,9 +1,21 @@
 .todoItem {
   list-style-type: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border-bottom: 1px solid #E6E6E6;
+  padding: 20px;
+  font-size: 21px;
+  color: #4D4D4D;
+  position: relative;
+}
+
+.todoItem i {
+  cursor: pointer;
 }
 
 .completed {
-  color: gray;
+  color: #E6E6E6;
   text-decoration: line-through;
 }
 

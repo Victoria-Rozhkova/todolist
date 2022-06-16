@@ -20,14 +20,13 @@ export const TodoInput = ({ addTask }) => {
 
   return (
     <div className={style.todoInputWrapper}>
-      <span> </span>
-      <i className="fas fa-chevron-down" />
       <input
-        className="todo-input"
+        className={style.todoInput}
         placeholder="What needs to be done?"
         onChange={onChangeText}
         value={textInput}
         onKeyPress={addTaskHandler}
       />
+      <i className="fas fa-chevron-down" />
     </div>);
 };

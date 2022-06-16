@@ -9,15 +9,15 @@ export const TodoFilter = ({ count, filter, todos, activeFilter, deleteCompleted
     deleteCompletedTasks(activeTasks);
   };
   return (
-    <div className="filter">
-      <span className="count">{`${count} Tasks left`}</span>
+    <div className={style.filter}>
+      <span className={style.count}>{`${count} items left`}</span>
       <div className="btn-group">
         {filter.map(({ text, id }) => (
           <button onClick={() => changeFilter(id)} key={id} className={id === activeFilter ? style.active : style.filterBtn}
           >{text}</button>
         ))}
       </div>
-      <div><button onClick={clearCompleted}>Clear completed</button></div>
+      <div><button className={style.clearCompleted} onClick={clearCompleted}>Clear completed</button></div>
     </div>
   );
 };
