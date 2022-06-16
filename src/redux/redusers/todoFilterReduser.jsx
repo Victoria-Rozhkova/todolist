@@ -1,3 +1,5 @@
+const CHANGE_FILTER = "CHANGE_FILTER";
+
 const initialState = {
   filter: [
     {
@@ -12,14 +14,22 @@ const initialState = {
       text: 'Completed',
       id: 'completed'
     }
-  ]
+  ],
+  activeFilter: 'all'
 };
 
 export const todoFilterReduser = (state = initialState, action) => {
   switch (action.type) {
-    case 'INCREMENT':
-      return state;
+    case CHANGE_FILTER:
+      return {
+        ...state,
+        activeFilter: action.activeFilter
+      };
     default:
       return state;
   }
+};
+
+export const changeFilterActionCreator = (activeFilter) => {
+  return { type: CHANGE_FILTER, activeFilter };
 };

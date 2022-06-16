@@ -1,7 +1,7 @@
 import React from "react";
 import style from "./TodoFilter.module.css";
 
-export const TodoFilter = ({ count, filter, todos, activeFilter, deleteCompletedTasks }) => {
+export const TodoFilter = ({ count, filter, todos, activeFilter, deleteCompletedTasks, changeFilter }) => {
   const clearCompleted = () => {
     const activeTasks = todos.filter(task => {
       return task.isCompleted === false;
@@ -13,7 +13,7 @@ export const TodoFilter = ({ count, filter, todos, activeFilter, deleteCompleted
       <span className="count">{`${count} Tasks left`}</span>
       <div className="btn-group">
         {filter.map(({ text, id }) => (
-          <button key={id} className={id === activeFilter ? style.active : style.filterBtn}
+          <button onClick={() => changeFilter(id)} key={id} className={id === activeFilter ? style.active : style.filterBtn}
           >{text}</button>
         ))}
       </div>

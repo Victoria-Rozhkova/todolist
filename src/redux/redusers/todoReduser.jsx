@@ -19,8 +19,6 @@ const initialState = {
       isCompleted: false,
     },
   ],
-  activeFilter: "all",
-
 };
 
 export const todoReduser = (state = initialState, action) => {
